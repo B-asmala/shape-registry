@@ -5,7 +5,7 @@ bool Registry::registerShape(std::string shapeName, std::function<std::unique_pt
 
     auto& registryMap = Registry::getRegistryMap();
     auto it = registryMap.find(shapeName);
-    if(it == registryMap.end()){
+    if(it == registryMap.end()){ // shape not registered yet
         registryMap[shapeName] = std::move(factory);
         return true;
     }else{

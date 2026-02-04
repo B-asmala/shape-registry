@@ -8,6 +8,9 @@
 #include "shape.hpp"
 
 
+// manages a static map between shape names and shape factory functions
+
+
 class Registry {
 public:
     static auto& getRegistryMap(){

@@ -13,17 +13,18 @@ int main(int argc, char* argv[]){
         return 1; 
     }
 
-    std::string shapeName = argv[1];
+
+    std::string shapeName = argv[1]; 
     std::vector<int> parameters;
 
-
+    // parse provided parameters
     for(int i = 2; i < argc; i ++){
         parameters.push_back(std::stoi(argv[i]));
     }
     
     std::unique_ptr<Shape> x = Registry::createShapeInstance(shapeName, parameters);
 
-    if(x){
+    if(x){ // if x is not null
         std::cout << x->getOverallDescription();
     }else{
         std::cout << "shape not available\n";
